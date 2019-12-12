@@ -8,15 +8,26 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  public teste: Array<GenericClass>;
+  public categories: Array<GenericClass>;
   constructor(public httpService: HttpService) {}
 
   ngOnInit() {
+    this.getCategory();
+  }
+
+  deleteCategory(category_id) {
+    console.log('cliquei no', category_id);
+    this.httpService.delete(`categories/${category_id}`).subscribe(payload => {
+      console.log(payload);
+      this.getCategory();
+    });
+  }
+
+  getCategory() {
     this.httpService.getList('categories').subscribe( payload => {
       console.log(payload);
-      const teste = payload.map( item => new GenericClass(item));
-      this.teste = teste;
-      console.log(teste);
+      this.categories = payload.map( item => new GenericClass(item));;
+      console.log(this.categories);
     })
   }
 

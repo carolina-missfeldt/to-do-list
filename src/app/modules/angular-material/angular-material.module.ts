@@ -26,7 +26,7 @@ import {
   MatPaginatorModule,
   MatChipsModule,
   MatSliderModule,
-  MatTreeModule
+  MatTreeModule,
 } from '@angular/material';
 
 @NgModule({
@@ -35,7 +35,8 @@ import {
     CommonModule
   ],
   exports: [
-    MatListModule
+    MatListModule,
+    MatIconModule
   ]
 })
 export class AngularMaterialModule { }

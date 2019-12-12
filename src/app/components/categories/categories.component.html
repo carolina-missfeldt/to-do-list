@@ -1,6 +1,8 @@
 
-  <mat-selection-list>
-      <mat-list-option *ngFor="let item of teste">
-        {{item.name}}
-      </mat-list-option>
-    </mat-selection-list>
+<mat-nav-list>
+    <mat-list-item *ngFor="let category of categories">
+       <a matLine href="#">{{ category?.name}}</a>
+      <mat-icon class="icon" aria-hidden="false" (click)="deleteCategory(category.id)">delete</mat-icon>
+       <mat-icon class="icon" aria-hidden="false">edit</mat-icon>
+    </mat-list-item>
+</mat-nav-list>
