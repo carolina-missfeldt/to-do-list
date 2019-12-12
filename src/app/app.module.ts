@@ -21,6 +21,9 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
     BrowserAnimationsModule,
     AngularMaterialModule
   ],
+  exports: [
+    AngularMaterialModule
+  ],
   providers: [HttpClient,HttpService],
   bootstrap: [AppComponent]
 })

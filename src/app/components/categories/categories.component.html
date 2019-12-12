@@ -1,6 +1,6 @@
 
-<div *ngFor="let item of teste">
-    <div>{{item.name}}</div>
-    <div>{{item.id}}</div>
-  
-  </div>
+  <mat-selection-list>
+      <mat-list-option *ngFor="let item of teste">
+        {{item.name}}
+      </mat-list-option>
+    </mat-selection-list>
