@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$app-primary: rgba( 46, 66,114,1);	// Main Primary color */
+$app-dark-1: rgba(  2, 19, 59,1);
+$app-dark-2: rgba( 13, 35, 86,1);
+$app-light-1: rgba( 93,108,141,1);
+$app-light-2: rgba(155,159,169,1);
+
+ 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
