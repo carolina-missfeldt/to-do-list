@@ -15,7 +15,7 @@
         {{ l?.name}}
     </a>
     <mat-form-field *ngIf="edit && l.id === listId" class="new-category">
-      <input (keyup.enter)="editListName(l.id, l.name)" matInput placeholder="Editar nome da lista" [(ngModel)]="l.name">
+      <input (keyup.enter)="editList(l.id, l.name)" matInput placeholder="Editar nome da lista" [(ngModel)]="l.name">
       <mat-icon class="add-icon" matSuffix (click)="editList(l.id, l.name)">add</mat-icon>
     </mat-form-field>
     <mat-icon class="icon" aria-hidden="false" (click)="openEdition(l.id)">edit</mat-icon>

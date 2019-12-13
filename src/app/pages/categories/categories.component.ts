@@ -33,7 +33,7 @@ export class CategoriesComponent implements OnInit {
     })
   }
   
-  deleteList(category_id) {
+  deleteCategory(category_id) {
     console.log('cliquei no', category_id);
     this.httpService.delete(`categories/${category_id}`).subscribe(payload => {
       console.log(payload);
