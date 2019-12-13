@@ -4,14 +4,14 @@
 
 @include mat-core();
 
-$app-primary: #2E4271;	// Main Primary color */
-$app-dark-1: #0D1321;
-$app-dark-2: #0D2356;
-$app-light-1: #63ADF2;
-$app-light-2: #5D6C8D;
+$app-primary: #FFFFFF;	// Main Primary color */
+$app-dark-1: #412234;
+$app-dark-2: #6D466B;
+$app-light-1: #B49FCC;
+$app-light-2: #EAD7D7;
 
 $font-primary: rgba(255, 255, 255, 1);
 
  
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: $app-dark-2}

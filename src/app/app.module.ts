@@ -9,11 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { ListComponent } from './pages/list/list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ListComponent
   ],
   imports: [
   BrowserModule,

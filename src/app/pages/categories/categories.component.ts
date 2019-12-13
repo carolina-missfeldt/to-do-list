@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GenericClass } from 'src/app/class/generic-class';
 import { HttpService } from 'src/app/services/http.service';
 import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -14,7 +15,7 @@ export class CategoriesComponent implements OnInit {
   public edit: boolean = false;
   public categoryId: string = '';
 
-  constructor(public httpService: HttpService, public dialog: MatDialog) {}
+  constructor(public httpService: HttpService, public router: Router) {}
 
   ngOnInit() {
     this.getCategory();
@@ -68,10 +69,13 @@ export class CategoriesComponent implements OnInit {
       this.httpService.put(`categories/${params.id}`, params).subscribe(payload => {
         console.log(payload);
         this.getCategory();
-        this.categoryName = '';
         this.edit = false;
       })
     };
+  }
+
+  openList(id: string) {
+    this.router.navigate([`/categories/${id}/lists`]);
   }
 
 }

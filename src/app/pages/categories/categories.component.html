@@ -9,7 +9,7 @@
 </mat-list>
 <mat-nav-list>
   <mat-list-item *ngFor="let category of categories">
-    <a matLine href="#" *ngIf="!edit || category.id !== categoryId">
+    <a matLine (click)="openList(category.id)" *ngIf="!edit || category.id !== categoryId">
         {{ category?.name}}
     </a>
     <mat-form-field *ngIf="edit && category.id === categoryId" class="new-category">
@@ -20,7 +20,7 @@
     <mat-icon class="icon" aria-hidden="false" (click)="deleteCategory(category.id)">delete</mat-icon>
   </mat-list-item>
 </mat-nav-list>
-
+<router-outlet></router-outlet>
 <!-- <div mat-dialog-content>
   <p>What's your favorite animal?</p>
   <mat-form-field>
