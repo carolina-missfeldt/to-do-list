@@ -10,33 +10,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
+  public categoryId: string = '';
   public categories: Array<GenericClass>;
   public categoryName: string = "";
   public edit: boolean = false;
-  public categoryId: string = '';
+
 
   constructor(public httpService: HttpService, public router: Router) {}
 
   ngOnInit() {
-    this.getCategory();
+    this.getList();
   }
 
-  deleteCategory(category_id) {
-    console.log('cliquei no', category_id);
-    this.httpService.delete(`categories/${category_id}`).subscribe(payload => {
-      console.log(payload);
-      this.getCategory();
-    });
-  }
-
-  getCategory() {
+  
+  getList() {
     this.httpService.getList('categories').subscribe( payload => {
       console.log(payload);
       this.categories = payload.map( item => new GenericClass(item));;
       console.log(this.categories);
     })
   }
-
+  
+  deleteList(category_id) {
+    console.log('cliquei no', category_id);
+    this.httpService.delete(`categories/${category_id}`).subscribe(payload => {
+      console.log(payload);
+      this.getList();
+    });
+  }
   newCategory() {
     console.log('deu enter', this.categoryName);
     let params: GenericClass;
@@ -46,7 +47,7 @@ export class CategoriesComponent implements OnInit {
       }
       this.httpService.post('categories', params).subscribe(payload => {
         console.log(payload);
-        this.getCategory();
+        this.getList();
         this.categoryName = '';
       })
     };
@@ -68,7 +69,7 @@ export class CategoriesComponent implements OnInit {
       console.log(params);
       this.httpService.put(`categories/${params.id}`, params).subscribe(payload => {
         console.log(payload);
-        this.getCategory();
+        this.getList();
         this.edit = false;
       })
     };
