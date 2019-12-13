@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpService } from './services/http.service';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    FormsModule
   ],
   exports: [
     AngularMaterialModule

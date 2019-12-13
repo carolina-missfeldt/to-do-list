@@ -1,6 +1,6 @@
 export class GenericClass {
-    public id: string;
     public name: string;
+    public id?: string;
     public done?: boolean; 
 
     constructor(value) {

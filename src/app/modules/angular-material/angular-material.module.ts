@@ -36,7 +36,11 @@ import {
   ],
   exports: [
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
   ]
 })
 export class AngularMaterialModule { }
