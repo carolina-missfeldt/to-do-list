@@ -9,17 +9,22 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+
+  public pageTitle = "Lista de tarefas";
   public lists: Array<GenericClass>;
   public listName: string = "";
   public edit: boolean = false;
   public listId: string = '';
   public categoryId: string = '';
+  public backRoute = '';
+
   constructor(public httpService: HttpService, public router: Router, public route: ActivatedRoute) { }
 
 
   ngOnInit() {
-     this.route.parent.params.subscribe(params => {
+     this.route.params.subscribe(params => {
       this.categoryId = params['id'];
+      this.backRoute = `/categories/${this.categoryId}/`;
       console.log(this.categoryId);
    });
    if(this.categoryId) {
@@ -83,8 +88,8 @@ export class ListComponent implements OnInit {
     };
   }
 
-  // openList(id: string) {
-  //   this.router.navigate([`/categories/${id}/lists`]);
-  // }
+  openListItems(id: string) {
+    this.router.navigate([`/categories/${this.categoryId}/list/${id}/items`]);
+  }
 
 }

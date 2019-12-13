@@ -10,13 +10,19 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './pages/list/list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ItemsComponent } from './pages/items/items.component';
+import { ItemDetailComponent } from './pages/item-detail/item-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriesComponent,
-    ListComponent
+    ListComponent,
+    HeaderComponent,
+    ItemsComponent,
+    ItemDetailComponent
   ],
   imports: [
   BrowserModule,
@@ -29,6 +35,7 @@ import { ListComponent } from './pages/list/list.component';
   exports: [
     AngularMaterialModule
   ],
+  entryComponents: [ItemDetailComponent],
   providers: [HttpClient,HttpService],
   bootstrap: [AppComponent]
 })

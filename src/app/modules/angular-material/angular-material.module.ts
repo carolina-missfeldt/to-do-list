@@ -41,6 +41,7 @@ import {
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
+    MatCheckboxModule,
   ]
 })
 export class AngularMaterialModule { }

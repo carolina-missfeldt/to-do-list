@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
+
+  public pageTitle = "Categorias";
   public categoryId: string = '';
   public categories: Array<GenericClass>;
   public categoryName: string = "";

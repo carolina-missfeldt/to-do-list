@@ -13,7 +13,7 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getList(end_point: string): Observable<GenericClass[]> {
-    return this.http.get<Array<any>>(`${environment.url}/${end_point}`);
+    return this.http.get<Array<GenericClass>>(`${environment.url}/${end_point}`);
   }
 
   getItem(end_point: string): Observable<GenericClass> {
@@ -21,14 +21,14 @@ export class HttpService {
   }
 
   put(end_point: string, params: GenericClass) {
-    return this.http.put(`${environment.url}/${end_point}`, params);
+    return this.http.put<HttpResponse<Object>>(`${environment.url}/${end_point}`, params);
   }
 
   post(end_point: string, params: GenericClass) {
-    return this.http.post(`${environment.url}/${end_point}`, params);
+    return this.http.post<HttpResponse<Object>>(`${environment.url}/${end_point}`, params);
   }
 
   delete(end_point: string): Observable<any> {
-    return this.http.delete(`${environment.url}/${end_point}`);
+    return this.http.delete<HttpResponse<Object>>(`${environment.url}/${end_point}`);
   }
 }

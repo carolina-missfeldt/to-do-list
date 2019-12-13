@@ -1,3 +1,5 @@
+
+<app-header [title]="pageTitle" [route]="backRoute"></app-header>
 <mat-list>
   <mat-list-item>
     <mat-form-field class="new-category">
@@ -9,7 +11,7 @@
 </mat-list>
 <mat-nav-list>
   <mat-list-item *ngFor="let l of lists">
-    <a matLine (click)="openList(l.id)" *ngIf="!edit || l.id !== listId">
+    <a matLine (click)="openListItems(l.id)" *ngIf="!edit || l.id !== listId">
         {{ l?.name}}
     </a>
     <mat-form-field *ngIf="edit && l.id === listId" class="new-category">
