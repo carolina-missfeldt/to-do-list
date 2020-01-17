@@ -1,0 +1,24 @@
+
+<app-header [title]="pageTitle" [route]="backRoute"></app-header>
+<mat-list>
+  <mat-list-item>
+    <mat-form-field class="new-category">
+      <input (keyup.enter)="newList()" matInput placeholder="Nova lista" [(ngModel)]="listName">
+      <mat-icon class="add-icon" matSuffix (click)="newList()" matTooltip="Adicionar">add</mat-icon>
+    </mat-form-field>
+  </mat-list-item>
+
+</mat-list>
+<mat-nav-list>
+  <mat-list-item *ngFor="let l of lists">
+    <a matLine (click)="openListItems(l.id)" *ngIf="!edit || l.id !== listId">
+        {{ l?.name}}
+    </a>
+    <mat-form-field *ngIf="edit && l.id === listId" class="new-category">
+      <input (keyup.enter)="editList(l.id, l.name)" matInput placeholder="Editar nome da lista" [(ngModel)]="l.name">
+      <mat-icon class="add-icon" matSuffix (click)="editList(l.id, l.name)">add</mat-icon>
+    </mat-form-field>
+    <mat-icon class="icon" aria-hidden="false" (click)="openEdition(l.id)" matTooltip="Editar">edit</mat-icon>
+    <mat-icon class="icon" aria-hidden="false" (click)="deleteList(l.id)" matTooltip="Excluir">delete</mat-icon>
+  </mat-list-item>
+</mat-nav-list>

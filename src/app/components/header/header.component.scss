@@ -1,0 +1,29 @@
+@import '../../../styles.scss';
+
+.header {
+    background-color: $app-primary;
+    padding: 1% 2%;
+    color: $app-dark-1;
+    font-weight: 500;
+
+    h2 {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        .logo {
+            font-weight: 100;
+            margin-right: 1%;
+            @media screen and (max-width: 396px) {
+                display: none;
+            }
+        }
+    }
+    .back-button {
+        background-color: transparent !important;
+        margin-right: 1%;
+    }
+
+    .icon {
+        color: $app-dark-2;
+    }
+}

@@ -1,0 +1,10 @@
+<header class="header mat-elevation-z2">
+  <h2>
+    <button mat-button class="back-button" (click)="back()" *ngIf="title !== 'Categorias'">
+      <mat-icon class="icon" aria-label="Example icon-button with a heart icon">arrow_back</mat-icon>
+    </button>
+    <div class="logo">My ToDo List |</div>
+     <div>{{title}}</div>
+
+  </h2>
+</header>

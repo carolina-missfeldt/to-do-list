@@ -1,0 +1,11 @@
+<div class="item-detail">
+  <h2>Minha tarefa</h2>
+  <p>{{item.name}}</p>
+  <p>{{item.id}}</p>
+  <p *ngIf="!item.done" class="done false">Pendente</p>
+  <p *ngIf="item.done" class="done true">Concluída!</p>
+  <div mat-dialog-actions class="action-buttons">
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
+    <button mat-button [mat-dialog-close]="item"><span *ngIf="!item.done">Finalizar</span><span *ngIf="item.done">Reabrir</span></button>
+  </div>
+</div>
