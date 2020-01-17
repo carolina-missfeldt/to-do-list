@@ -21,6 +21,6 @@
     </mat-form-field>
     <mat-checkbox class="example-margin" [(ngModel)]="item.done" (click)="editItem(item.id, item.name, item.done)"></mat-checkbox>
     <mat-icon class="icon" aria-hidden="false" (click)="openEdition(item.id)" matTooltip="Editar">edit</mat-icon>
-    <mat-icon class="icon" aria-hidden="false" (click)="deleteList(item.id)" matTooltip="Excluir">delete</mat-icon>
+    <mat-icon class="icon" aria-hidden="false" (click)="deleteItem(item.id)" matTooltip="Excluir">delete</mat-icon>
   </mat-list-item>
 </mat-nav-list>
